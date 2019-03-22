@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: intruder-backend
-        image: akshitgrover/intruder-backend
+        image: akshitgrover/intruder-backend:v2
         ports:
         - containerPort: 3000
       - name: mongo-intruder

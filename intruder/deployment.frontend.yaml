@@ -5,9 +5,10 @@ kind: Deployment
 metadata:
   name: intruder-deployment-frontend
 
+
 spec:
   selector:
-    matchLables:
+    matchLabels:
       app: intruder-frontend
   template:
     metadata:
@@ -18,4 +19,4 @@ spec:
       - name: intruder-frontend
         image: awasthishubh/intruder-frontend
         ports:
-          containerPort: 80
+        - containerPort: 80
