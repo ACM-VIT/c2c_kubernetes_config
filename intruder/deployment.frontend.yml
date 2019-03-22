@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: intruder-deployment-frontend
+
+spec:
+  selector:
+    matchLables:
+      app: intruder-frontend
+  template:
+    metadata:
+      labels:
+        app: intruder-frontend
+    spec:
+      containers:
+      - name: intruder-frontend
+        image: awasthishubh/intruder-frontend
+        ports:
+          containerPort: 80

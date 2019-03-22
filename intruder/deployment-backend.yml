@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: intruder-deployment-backend
+
+spec:
+  selector:
+    matchLabels:
+      app: intruder-backend
+  template:
+    metadata:
+      labels:
+        app: intruder-backend
+    spec:
+      containers:
+      - name: intruder-backend
+        image: akshitgrover/intruder-backend
+        ports:
+        - containerPort: 3000
+      - name: mongo-intruder
+        image: mongo
+        ports:
+        - containerPort: 27017
